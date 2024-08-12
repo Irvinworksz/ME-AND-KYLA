@@ -1,0 +1,95 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa; /* Light cyan background */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling while bubbles are visible */
+}
+
+/* Container Styling */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff; /* White background for content area */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    position: relative; /* Position relative for bubble effect */
+}
+
+/* Heading Styling */
+h1 {
+    color: #ff4081; /* Bright pink color */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Button Styling */
+button {
+    background-color: #ff4081; /* Bright pink background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    margin-top: 20px;
+    position: relative; /* Position relative for bubble effect */
+    overflow: hidden; /* Hide overflow for bubble effect */
+}
+
+button:hover {
+    background-color: #f50057; /* Darker pink on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Bubble Effect */
+button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 20%, transparent 80%);
+    transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+button:focus, button:active {
+    outline: none; /* Remove default focus outline */
+}
+
+button:active:after {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 15px; /* Rounded corners */
+    margin-top: 20px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Show Image Class */
+.show {
+    opacity: 1; /* Fully visible */
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
